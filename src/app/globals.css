@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --kanvas: #fbf6ec;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-kanvas text-ink font-sans;
+    background-image:
+      radial-gradient(60rem 60rem at 110% -10%, rgba(200, 144, 42, 0.10), transparent 60%),
+      radial-gradient(50rem 50rem at -10% 0%, rgba(200, 22, 29, 0.06), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-merah text-kanvas;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Thin warm scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f4e9d4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c8902a;
+    border-radius: 99px;
+    border: 3px solid #f4e9d4;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  /* Small uppercase Sundanese-styled eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-brand text-merah;
+  }
+
+  /* Gold gradient text for accents */
+  .text-gold-grad {
+    background: linear-gradient(100deg, #7f571a 0%, #c8902a 40%, #e8b23c 70%, #c8902a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-merah-grad {
+    background: linear-gradient(105deg, #860e15 0%, #c8161d 55%, #df4b4f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Hairline divider with a gold node */
+  .hr-node {
+    @apply relative h-px w-full bg-gradient-to-r from-transparent via-kencana/40 to-transparent;
+  }
+
+  /* Woven-bamboo (anyaman) subtle texture for dark panels */
+  .anyaman {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 9px),
+      repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.10) 0 2px, transparent 2px 9px);
+  }
+
+  .card-warm {
+    @apply rounded-3xl border border-kanvas-300/70 bg-white/70 shadow-soft backdrop-blur-sm;
+  }
+}
+
+@layer utilities {
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+
+  .paused {
+    animation-play-state: paused;
+  }
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
