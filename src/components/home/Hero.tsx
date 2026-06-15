@@ -8,12 +8,14 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { DishImage } from "@/components/ui/DishImage";
 import { SaungRoof, BatikField } from "@/components/brand/motifs";
 import { formatRupiah } from "@/lib/format";
+import type { MenuItem } from "@/types/content";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export function Hero() {
+export function Hero({ dishes }: { dishes: MenuItem[] }) {
   const reduce = useReducedMotion();
   const { branch } = useBranch();
+  const [hero, mid, side] = dishes;
 
   const container = {
     hidden: {},
@@ -101,15 +103,17 @@ export function Hero() {
             className="absolute right-0 top-4 w-[68%] max-w-[340px]"
           >
             <div className="rounded-[2rem] border border-kanvas/15 bg-kanvas/5 p-3 shadow-lifted backdrop-blur-sm">
-              <DishImage tone="ayam" steam emblem caption="Bakakak Ayam Kampung" className="aspect-[4/5] rounded-[1.4rem]" />
+              <DishImage tone={hero?.tone} src={hero?.image} steam emblem caption={hero?.name} className="aspect-[4/5] rounded-[1.4rem]" />
               <div className="flex items-center justify-between px-1 py-3">
                 <div>
-                  <p className="font-display text-lg text-kanvas">Signature</p>
+                  <p className="font-display text-lg text-kanvas">{hero?.name ?? "Signature"}</p>
                   <p className="text-xs text-kanvas/60">Hidangan istimewa kami</p>
                 </div>
-                <span className="rounded-full bg-kencana px-3 py-1.5 text-sm font-bold text-ink">
-                  {formatRupiah(98000)}
-                </span>
+                {hero && (
+                  <span className="rounded-full bg-kencana px-3 py-1.5 text-sm font-bold text-ink">
+                    {formatRupiah(hero.price)}
+                  </span>
+                )}
               </div>
             </div>
           </motion.div>
@@ -122,7 +126,7 @@ export function Hero() {
           >
             <div className={reduce ? "" : "animate-float"}>
               <div className="overflow-hidden rounded-3xl border border-kanvas/15 shadow-lifted">
-                <DishImage tone="sayur" emblem caption="Karedok" className="aspect-square" />
+                <DishImage tone={mid?.tone} src={mid?.image} emblem caption={mid?.name} className="aspect-square" />
               </div>
             </div>
           </motion.div>
@@ -136,11 +140,11 @@ export function Hero() {
             <div className="rounded-2xl border border-kanvas/15 bg-kanvas/10 p-3 backdrop-blur-md">
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 shrink-0 overflow-hidden rounded-xl">
-                  <DishImage tone="minuman" emblem={false} className="h-full w-full" />
+                  <DishImage tone={side?.tone} src={side?.image} emblem={false} className="h-full w-full" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-kanvas">Es Goyobod</p>
-                  <p className="text-xs text-kanvas/60">Segar khas Bandung</p>
+                  <p className="text-sm font-bold text-kanvas">{side?.name ?? "Hidangan andalan"}</p>
+                  <p className="text-xs text-kanvas/60">{side ? formatRupiah(side.price) : "Favorit pelanggan"}</p>
                 </div>
               </div>
             </div>

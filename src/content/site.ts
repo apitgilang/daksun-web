@@ -6,13 +6,13 @@ export const site: SiteConfig = {
   tagline: "Masakan Sunda, dimasak dadakan — sangu haneut, sambel ngageugeuh.",
   description:
     "Restoran Sunda autentik. Setiap hidangan dimasak dadakan — segar, hangat, dan penuh rasa. Pesan & reservasi mudah lewat WhatsApp.",
-  defaultWhatsApp: "6281200000000",
-  email: "halo@dadakansunda.id",
+  defaultWhatsApp: "6281320664905",
+  email: "rmdadakansunda@gmail.com",
   hours: "10.00 – 22.00 WIB",
   socials: {
     instagram: "https://instagram.com/dadakansunda",
     tiktok: "https://tiktok.com/@dadakansunda",
-    facebook: "https://facebook.com/dadakansunda",
+    facebook: "https://www.facebook.com/share/1D5GyYpGYm/?mibextid=wwXIfr",
   },
 };
 

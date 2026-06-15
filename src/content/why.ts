@@ -34,8 +34,8 @@ export const whyPoints: WhyPoint[] = [
 ];
 
 export const stats = [
-  { value: "12+", label: "Tahun melayani" },
-  { value: "4", label: "Cabang & terus tumbuh" },
-  { value: "60+", label: "Menu Sunda autentik" },
+  { value: "8+", label: "Tahun melayani" },
+  { value: "2", label: "Cabang & terus tumbuh" },
+  { value: "200+", label: "Menu Sunda autentik" },
   { value: "250rb+", label: "Pelanggan bahagia" },
 ];

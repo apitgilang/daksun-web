@@ -6,10 +6,34 @@ import { PromoStrip } from "@/components/home/PromoStrip";
 import { Testimonials } from "@/components/home/Testimonials";
 import { BranchesStrip } from "@/components/home/BranchesStrip";
 import { CTASection } from "@/components/home/CTASection";
-import { getSettings, getBranches } from "@/lib/cms";
+import { getSettings, getBranches, getSignatureItems } from "@/lib/cms";
+import type { MenuItem } from "@/types/content";
+
+/** First items spanning distinct tones, so the hero cards look varied. */
+function pickHeroDishes(items: MenuItem[], n = 3): MenuItem[] {
+  const picked: MenuItem[] = [];
+  const tones = new Set<string>();
+  for (const it of items) {
+    if (picked.length >= n) break;
+    if (!tones.has(it.tone)) {
+      picked.push(it);
+      tones.add(it.tone);
+    }
+  }
+  for (const it of items) {
+    if (picked.length >= n) break;
+    if (!picked.includes(it)) picked.push(it);
+  }
+  return picked;
+}
 
 export default async function HomePage() {
-  const [site, branches] = await Promise.all([getSettings(), getBranches()]);
+  const [site, branches, signatureItems] = await Promise.all([
+    getSettings(),
+    getBranches(),
+    getSignatureItems(),
+  ]);
+  const heroDishes = pickHeroDishes(signatureItems);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -30,11 +54,11 @@ export default async function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Hero />
+      <Hero dishes={heroDishes} />
       <WhyUs />
       <SignatureDishes />
       <StorySection />
-      <PromoStrip />
+      {/* <PromoStrip /> */}
       <Testimonials />
       <BranchesStrip />
       <CTASection />

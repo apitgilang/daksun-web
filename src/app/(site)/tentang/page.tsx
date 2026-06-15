@@ -51,7 +51,7 @@ export default function TentangPage() {
                 <DishImage tone="ayam" steam emblem caption="Dapur dadakan kami" className="aspect-[4/5]" />
               </div>
               <div className="absolute -bottom-6 -left-4 w-44 -rotate-2 rounded-3xl border border-kanvas-300 bg-white p-5 text-center shadow-lifted">
-                <p className="font-display text-4xl text-merah">2014</p>
+                <p className="font-display text-4xl text-merah">2018</p>
                 <p className="text-xs text-ink-muted">Tahun kami mulai memasak</p>
               </div>
             </div>

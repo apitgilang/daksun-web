@@ -11,7 +11,7 @@ export async function BranchesStrip() {
         <SectionHeading
           eyebrow="Cabang Kami"
           title={<>Mampir ke saung terdekat</>}
-          intro="Empat cabang dan terus bertumbuh. Pilih yang paling dekat — pesan & reservasi langsung ke cabang tersebut."
+          intro="Kami terus bertumbuh. Pilih cabang yang paling dekat — pesan & reservasi langsung ke cabang tersebut."
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {branches.map((b, i) => (

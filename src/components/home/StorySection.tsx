@@ -16,7 +16,7 @@ export function StorySection() {
             </div>
             <div className="absolute -bottom-6 -right-4 w-44 rotate-2 rounded-3xl border border-kanvas-300 bg-white p-4 shadow-lifted sm:-right-8 sm:w-52">
               <SaungRoof className="h-8 w-full text-kencana" />
-              <p className="mt-2 text-center font-display text-lg text-ink">Sejak 2014</p>
+              <p className="mt-2 text-center font-display text-lg text-ink">Sejak 2018</p>
               <p className="text-center text-xs text-ink-muted">Menjaga rasa asli Sunda</p>
             </div>
             <div className="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-merah/10 blur-2xl" />
