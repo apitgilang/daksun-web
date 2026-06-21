@@ -21,9 +21,9 @@ export const navLinks = [
   { href: "/cabang", label: "Cabang" },
   { href: "/tentang", label: "Tentang" },
   { href: "/galeri", label: "Galeri" },
-  { href: "/promo", label: "Promo" },
+  // { href: "/promo", label: "Promo" },
   { href: "/acara", label: "Acara" },
-  { href: "/berita", label: "Berita" },
-  { href: "/kemitraan", label: "Kemitraan" },
+  // { href: "/berita", label: "Berita" },
+  // { href: "/kemitraan", label: "Kemitraan" },
   { href: "/kontak", label: "Kontak" },
 ];

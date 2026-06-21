@@ -13,7 +13,7 @@ import type { SiteConfig } from "@/types/content";
 import { cn } from "@/lib/utils";
 
 const primaryNav = navLinks.filter((l) =>
-  ["/menu", "/cabang", "/tentang", "/galeri", "/promo", "/acara", "/kontak"].includes(l.href),
+  ["/menu", "/cabang", "/tentang", "/galeri", "/acara", "/kontak"].includes(l.href),
 );
 
 export function Header({ settings }: { settings: SiteConfig }) {

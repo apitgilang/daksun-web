@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 const perks = [
   { icon: UtensilsCrossed, title: "Katering Sunda", desc: "Paket prasmanan & nasi box dengan cita rasa dadakan." },
-  { icon: Users, title: "Kapasitas Fleksibel", desc: "Dari arisan intim hingga resepsi 150 tamu." },
-  { icon: Music, title: "Fasilitas Lengkap", desc: "Sound system, panggung, dan area parkir luas." },
-  { icon: PartyPopper, title: "Dekorasi Tematik", desc: "Nuansa saung & pesawahan yang autentik dan hangat." },
+  { icon: Users, title: "Kapasitas Fleksibel", desc: "Dari arisan hingga ulang tahun 100 tamu." },
+  { icon: Music, title: "Fasilitas Lengkap", desc: "Sound system, dan area parkir luas." },
+  { icon: PartyPopper, title: "Dekorasi Tematik", desc: "Nuansa saung & pegunungan yang autentik dan hangat." },
 ];
 
 export default async function AcaraPage() {
@@ -51,7 +51,7 @@ export default async function AcaraPage() {
       </Section>
 
       {/* spaces */}
-      <Section>
+      {/* <Section>
         <div className="container-x">
           <SectionHeading
             eyebrow="Pilihan Ruang"
@@ -87,7 +87,7 @@ export default async function AcaraPage() {
             ))}
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* CTA band */}
       <section className="relative overflow-hidden bg-ink py-16 text-kanvas">
