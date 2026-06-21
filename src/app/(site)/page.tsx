@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { BranchesStrip } from "@/components/home/BranchesStrip";
 import { CTASection } from "@/components/home/CTASection";
 import { getSettings, getBranches, getSignatureItems } from "@/lib/cms";
+import { siteUrl } from "@/lib/siteUrl";
 import type { MenuItem } from "@/types/content";
 
 /** First items spanning distinct tones, so the hero cards look varied. */
@@ -41,7 +42,7 @@ export default async function HomePage() {
     description: site.description,
     servesCuisine: "Sundanese",
     priceRange: "$$",
-    url: "https://dadakansunda.id",
+    url: siteUrl,
     email: site.email,
     openingHours: "Mo-Su 10:00-22:00",
     department: branches.map((b) => ({

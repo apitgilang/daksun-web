@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Karla } from "next/font/google";
 import "./globals.css";
 import { getSettings } from "@/lib/cms";
+import { siteUrl } from "@/lib/siteUrl";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ const karla = Karla({
 export async function generateMetadata(): Promise<Metadata> {
   const s = await getSettings();
   return {
-    metadataBase: new URL("https://dadakansunda.id"),
+    metadataBase: new URL(siteUrl),
     title: {
       default: `${s.name} — Masakan Sunda Dimasak Dadakan`,
       template: `%s · ${s.name}`,
