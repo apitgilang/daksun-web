@@ -10,7 +10,8 @@ import { apiVersion, dataset, projectId } from "./src/sanity/env";
 export default defineConfig({
   name: "dadakan-sunda",
   title: "Dadakan Sunda — Studio",
-  basePath: "/studio",
+  // Served at the root of <hostname>.sanity.studio after `sanity deploy`.
+  basePath: "/",
   projectId,
   dataset,
   plugins: [structureTool({ structure }), visionTool({ defaultApiVersion: apiVersion })],

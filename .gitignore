@@ -2,6 +2,9 @@
 /.next/
 /out/
 /build
+# Sanity Studio build output + runtime cache (from `sanity build`/`deploy`)
+/dist/
+/.sanity/
 .DS_Store
 *.pem
 npm-debug.log*
