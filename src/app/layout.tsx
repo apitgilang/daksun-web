@@ -29,6 +29,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: s.description,
     keywords: ["restoran sunda", "masakan sunda", "rumah makan sunda", "nasi timbel", "bakakak ayam", "dadakan sunda"],
+    // Google Search Console "HTML tag" verification. Set the code in
+    // NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, then rebuild + re-upload.
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
     openGraph: {
       title: `${s.name} — Masakan Sunda Dimasak Dadakan`,
       description: s.description,
