@@ -1,4 +1,8 @@
-import { groq } from "next-sanity";
+// `groq` is just an identity tagged-template (returns the query string). Defined
+// locally to avoid importing next-sanity, whose live-preview server actions are
+// incompatible with `output: export`.
+const groq = (strings: TemplateStringsArray, ...values: unknown[]) =>
+  strings.reduce((acc, s, i) => acc + s + (i < values.length ? String(values[i]) : ""), "");
 
 export const settingsQuery = groq`*[_type == "siteSettings"][0]{
   name, tagline, description, defaultWhatsApp, email, hours,

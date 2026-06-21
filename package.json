@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "preview": "npx serve out",
+    "deploy:studio": "npx sanity deploy",
     "lint": "next lint",
     "seed": "node --env-file=.env.local --import tsx scripts/seed.ts",
     "unseed": "node --env-file=.env.local scripts/unseed.mjs"

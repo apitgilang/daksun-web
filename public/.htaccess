@@ -1,0 +1,28 @@
+# Apache config for the static export on shared hosting (Rumahweb cPanel).
+# Copied verbatim into ./out by `next build`.
+
+# Serve Next's generated OpenGraph image (an extension-less file) as PNG so
+# WhatsApp/Facebook/Instagram link previews render it.
+<Files "opengraph-image">
+  ForceType image/png
+</Files>
+
+# Use Next's exported not-found page for unknown URLs.
+ErrorDocument 404 /404.html
+
+# Force HTTPS (free SSL is included with the hosting plan).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Long-cache the hashed Next.js assets; they're content-addressed so safe forever.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+</IfModule>
